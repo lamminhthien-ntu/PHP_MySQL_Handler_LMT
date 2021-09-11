@@ -1,6 +1,6 @@
 <?php
 class DBController {
-	//Parameters to connect to the database
+	//Parameters with default values to connect to the database
 	private $host = "localhost";
 	private $user = "root";
 	private $password = "";
@@ -9,8 +9,12 @@ class DBController {
 	
 
 	//Generate Connection by Contructor;
-	function __construct() {
+	//If your sql server have different host and username, password, you must give data to constructor
+	function __construct($host,$user,$password,$database) {
 		$this->conn = $this->connectDB();
+		$this->host = $host;
+		$this->password = $password;
+		$this->database = $database;
 	}
 	
 
