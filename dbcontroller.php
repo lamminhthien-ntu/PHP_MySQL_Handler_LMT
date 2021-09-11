@@ -4,7 +4,7 @@ class DBController {
 	private $host = "localhost";
 	private $user = "root";
 	private $password = "";
-	private $database = "blog_samples";
+	private $database = "myDB";
 	private $conn;
 	
 
@@ -12,9 +12,6 @@ class DBController {
 	//If your sql server have different host and username, password, you must give data to constructor
 	function __construct($host,$user,$password,$database) {
 		$this->conn = $this->connectDB();
-		$this->host = $host;
-		$this->password = $password;
-		$this->database = $database;
 	}
 	
 
